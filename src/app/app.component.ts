@@ -10,4 +10,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'ioc-angular-biblioteca-ainhoa';
+  constructor() {
+    console.log('Biblioteca de Llibres iniciada correctament - Ainhoa Alvarez');
+  }
 }
