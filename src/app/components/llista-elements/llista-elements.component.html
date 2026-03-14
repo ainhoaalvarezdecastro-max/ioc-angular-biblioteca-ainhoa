@@ -1,1 +1,17 @@
-<p>llista-elements works!</p>
+<h2>Llista d'elements</h2>
+
+<div *ngIf="elementsFiltrats.length === 0">
+  No s'han trobat resultats
+</div>
+
+<div class="llista-grid">
+
+  <div *ngFor="let element of elementsFiltrats; trackBy: trackById">
+
+    <app-targeta-element
+      [element]="element">
+    </app-targeta-element>
+
+  </div>
+
+</div>

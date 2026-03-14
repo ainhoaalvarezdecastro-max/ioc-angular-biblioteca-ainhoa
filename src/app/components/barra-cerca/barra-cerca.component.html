@@ -1,1 +1,21 @@
-<p>barra-cerca works!</p>
+<h2>Cerca d'elements</h2>
+
+<form (ngSubmit)="ferCerca()">
+
+  <label for="cerca">Cercar elements</label>
+
+  <input
+    id="cerca"
+    type="text"
+    name="cerca"
+    [(ngModel)]="termeCerca"
+    minlength="3"
+    placeholder="Escriu per cercar..."
+    aria-label="Cercar elements"
+  >
+
+  <button type="submit">
+    Cercar
+  </button>
+
+</form>
