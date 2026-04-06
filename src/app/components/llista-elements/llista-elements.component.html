@@ -1,17 +1,22 @@
 <h2>Llista d'elements</h2>
 
-<div *ngIf="elementsFiltrats.length === 0">
+<div *ngIf="elementService.carregant()" class="spinner-container">
+  <div class="spinner"></div>
+</div>
+
+<div *ngIf="elementService.error()">
+  <p>{{ elementService.error() }}</p>
+  <button (click)="elementService.obtenirPopulars()">
+    Reintentar
+  </button>
+</div>
+
+<div *ngIf="!elementService.carregant() && elementService.elements().length === 0">
   No s'han trobat resultats
 </div>
 
-<div class="llista-grid">
-
-  <div *ngFor="let element of elementsFiltrats; trackBy: trackById">
-
-    <app-targeta-element
-      [element]="element">
-    </app-targeta-element>
-
+<div *ngIf="elementService.elements().length > 0">
+  <div *ngFor="let element of elementService.elements()">
+    <app-targeta-element [element]="element"></app-targeta-element>
   </div>
-
 </div>
