@@ -1,0 +1,30 @@
+<h2>Preferits</h2>
+
+<form [formGroup]="formulari">
+
+  <div formArrayName="notes">
+
+    <div *ngFor="let element of preferitsService.preferits(); let i = index">
+
+      <p>{{ element.titol }}</p>
+
+      <input [formControlName]="i" placeholder="Afegir nota..." />
+      <p *ngIf="notes.at(i).touched && notes.at(i).errors?.['minlength']">
+        Les notes han de tenir mínim 3 caràcters
+      </p>
+
+      <button type="button" (click)="guardarNota(i)">
+        Afegir
+      </button>
+      <ul>
+        <li *ngFor="let nota of notesPerElement[element.id]; let j = index">
+            {{ nota }}
+            <button (click)="eliminarNota(element.id, j)">❌</button>
+        </li>
+    </ul>
+
+    </div>
+
+  </div>
+
+</form>

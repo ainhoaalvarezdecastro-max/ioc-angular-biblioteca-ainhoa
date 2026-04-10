@@ -1,8 +1,15 @@
 <div class="targeta">
+
+  <button (click)="togglePreferit()">
+    <span *ngIf="preferitsService.esPreferit(element.id)">❤️</span>
+    <span *ngIf="!preferitsService.esPreferit(element.id)">🤍</span>
+  </button>
+
   <h3>{{ element.titol | uppercase }}</h3>
   <p>Preu: {{ element.preu }}</p>
 
   <p *ngIf="element.descripcio">
     {{ element.descripcio }}
   </p>
+
 </div>

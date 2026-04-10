@@ -19,6 +19,46 @@
       "imatge": "https://via.placeholder.com/150",
       "popular": false,
       "stock": 3
+    },
+    {
+      "id": "3",
+      "nom": "Element 3",
+      "descripcio": "Descripció element 3",
+      "categoria": "test",
+      "preu": 30,
+      "imatge": "img3.jpg",
+      "popular": true,
+      "stock": 8
+  },
+  {
+      "id": "4",
+      "nom": "Element 4",
+      "descripcio": "Descripció element 4",
+      "categoria": "test",
+      "preu": 40,
+      "imatge": "img4.jpg",
+      "popular": false,
+      "stock": 2
+  },
+  {
+      "id": "5",
+      "nom": "Element 5",
+      "descripcio": "Descripció element 5",
+      "categoria": "test",
+      "preu": 50,
+      "imatge": "img3.jpg",
+      "popular": true,
+      "stock": 8
+},
+{
+      "id": "6",
+      "nom": "Element 6",
+      "descripcio": "Descripció element 6",
+      "categoria": "test",
+      "preu": 60,
+      "imatge": "img4.jpg",
+      "popular": false,
+      "stock": 10
     }
   ]
 }
