@@ -1,27 +1,47 @@
-# IocAngularBibliotecaAinhoa
+# Aplicació Angular Biblioteca Ainhoa Álvarez
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+## Descripció
 
-## Development server
+Aplicació Angular que permet visualitzar un catàleg d'elements, fer cerques, veure detalls i gestionar preferits amb autenticació.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Mapa de rutes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Ruta        | Component          | Accés  |
+| ----------- | ------------------ | ------ |
+| /cataleg    | CatalegComponent   | Públic |
+| /cerca      | CercaComponent     | Públic |
+| /detall/:id | DetallComponent    | Públic |
+| /preferits  | PreferitsComponent | Privat |
+| /login      | LoginComponent     | Públic |
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Execució en local
 
-## Running unit tests
+```bash
+git clone [https://github.com/ainhoaalvarezdecastro-max/ioc-angular-biblioteca-ainhoa]
+cd ioc-angular-biblioteca-ainhoa
+npm install
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Obrir: http://localhost:4200
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Build de producció
 
-## Further help
+```bash
+ng build --configuration production
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+El bundle generat es troba a la carpeta `dist/`.
+
+---
+
+## Credencials de prova
+
+Email: [admin@test.com](mailto:admin@test.com)
+Contrasenya: 1234
