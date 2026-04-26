@@ -1,0 +1,25 @@
+<h2>Catàleg</h2>
+
+<div *ngIf="elementService.carregant()">
+  <p>Carregant dades...</p>
+</div>
+
+
+<div *ngIf="elementService.error()">
+  {{ elementService.error() }}
+  <button (click)="elementService.obtenirPopulars()">Reintentar</button>
+</div>
+
+<div *ngIf="!elementService.carregant() && elementService.elements().length === 0">
+  No s'han trobat resultats
+</div>
+
+<div *ngIf="!elementService.carregant()">
+  <cdk-virtual-scroll-viewport itemSize="100" style="height: 400px">
+
+    <div *cdkVirtualFor="let element of elementService.elements()">
+        <app-targeta-element [element]="element"></app-targeta-element>
+    </div>
+
+  </cdk-virtual-scroll-viewport>
+</div>

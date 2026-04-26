@@ -5,11 +5,12 @@ import { BarraCercaComponent } from './components/barra-cerca/barra-cerca.compon
 import { ElementService } from './serveis/element.service'; 
 import { FormulariCercaComponent } from './components/formulari-cerca/formulari-cerca.component';
 import { PreferitsPanelComponent } from './components/preferits-panel/preferits-panel.component';
+import { NavegacioComponent } from './components/navegacio/navegacio.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LlistaElementsComponent,FormulariCercaComponent,PreferitsPanelComponent],
+  imports: [RouterOutlet,NavegacioComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

@@ -35,20 +35,20 @@ export class ElementService {
   }
 
   cercar(terme: string): void {
-    this.carregant.set(true);
-    this.error.set(null);
+  this.carregant.set(true);
+  this.error.set(null);
 
-    this.http.get<ElementApiResponse[]>(`${environment.apiUrl}/elements?q=${terme}`)
-      .subscribe({
-        next: (data) => {
-          const adaptats = adaptarElementsApi(data);
-          this.elements.set(adaptats);
-          this.carregant.set(false);
-        },
-        error: () => {
-          this.error.set('No s\'ha pogut fer la cerca.');
-          this.carregant.set(false);
-        }
-      });
-  }
+  this.http.get<ElementApiResponse[]>(`${environment.apiUrl}/elements?nom_like=${terme}`)
+    .subscribe({
+      next: (data) => {
+        const adaptats = adaptarElementsApi(data);
+        this.elements.set(adaptats);
+        this.carregant.set(false);
+      },
+      error: () => {
+        this.error.set('No s\'ha pogut fer la cerca.');
+        this.carregant.set(false);
+      }
+    });
+}
 }

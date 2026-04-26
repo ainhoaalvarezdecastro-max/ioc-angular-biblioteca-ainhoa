@@ -1,0 +1,34 @@
+<h2>Cerca d'elements</h2>
+
+<form (ngSubmit)="ferCerca()">
+  <input
+    type="text"
+    [(ngModel)]="terme"
+    name="cerca"
+    placeholder="Escriu per cercar..."
+    minlength="3"
+  >
+  <button type="submit">Cercar</button>
+</form>
+
+
+<div *ngIf="elementService.carregant()">
+  Carregant dades...
+</div>
+
+
+<div *ngIf="elementService.error()">
+  {{ elementService.error() }}
+</div>
+
+
+<div *ngIf="!elementService.carregant() && elementService.elements().length === 0">
+  No s'han trobat resultats
+</div>
+
+
+<div *ngIf="!elementService.carregant()">
+  <div *ngFor="let element of elementService.elements()">
+    <app-targeta-element [element]="element"></app-targeta-element>
+  </div>
+</div>

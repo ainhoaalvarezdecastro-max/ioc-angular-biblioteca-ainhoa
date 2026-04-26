@@ -1,0 +1,17 @@
+<nav>
+  <ul>
+    <li><a routerLink="/cataleg" routerLinkActive="actiu">Catàleg</a></li>
+    <li><a routerLink="/cerca" routerLinkActive="actiu">Cerca</a></li>
+    <li><a routerLink="/preferits" routerLinkActive="actiu">Preferits</a></li>
+    <li><a routerLink="/login" routerLinkActive="actiu">Login</a></li>
+  </ul>
+</nav>
+
+<div *ngIf="authService.obtenirUsuari() | async as user; else noUser">
+  {{ user.nom }}
+  <button (click)="authService.logout()">Logout</button>
+</div>
+
+<ng-template #noUser>
+  <a routerLink="/login">Iniciar sessió</a>
+</ng-template>
